@@ -1,0 +1,17 @@
+{
+  "name": "aaron-m.co.nz",
+  "description": "me",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/zenril/aaron-m.co.nz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-grid": "^4.0.1"
+  }
+}
