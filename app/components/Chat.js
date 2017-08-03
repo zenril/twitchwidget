@@ -38,7 +38,7 @@ export default class Chat extends React.Component
         var self = this;
         self.twitch.chat(function(channel, user, message) {
             const messages = self.state.messages;
-            messages.push( <Message message={message} user={user} key={user.id} />  );
+            messages.push( { message : message,  user:user, key:user.id } );
             self.setState({ messages });
             var element = document.getElementById("chat");
             element.scrollTop = element.scrollHeight;
@@ -56,7 +56,11 @@ export default class Chat extends React.Component
 
         return (
             <div id='chat' className={classes}>
-                {this.state.messages}
+                {
+                    this.state.messages.map(function(item, i){
+                        return <Message message={item.message} user={item.user} key={item.key} />;
+                    })
+                }
             </div>  
         )
     }
