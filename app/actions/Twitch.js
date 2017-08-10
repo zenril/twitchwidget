@@ -22,6 +22,10 @@ export default class Twitch
      
     }
 
+    escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    }
+
     //oauth not needed
     init(callback)
     {//http://aaron-m.co.nz/twitch/redirect.php
@@ -43,7 +47,7 @@ export default class Twitch
 
     parseEmotes(message, emotes)
     {   
-              
+        var me = this;      
         var start =0;
         var map = {};
         var emoteList = [];
@@ -54,7 +58,7 @@ export default class Twitch
                 var indexes = emotes[id][0].split("-");                
                 var emote = message.substring( +indexes[0], (+indexes[1])+1 );
                 if(!map[emote]){
-                    emoteList.push(emote);
+                    emoteList.push(me.escapeRegExp(emote));
                     map[emote] = id;
                 }
             }

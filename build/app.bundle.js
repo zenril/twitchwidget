@@ -12152,10 +12152,15 @@ var Twitch = function () {
         };
     }
 
-    //oauth not needed
-
-
     _createClass(Twitch, [{
+        key: 'escapeRegExp',
+        value: function escapeRegExp(str) {
+            return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+        }
+
+        //oauth not needed
+
+    }, {
         key: 'init',
         value: function init(callback) {
             //http://aaron-m.co.nz/twitch/redirect.php
@@ -12174,7 +12179,7 @@ var Twitch = function () {
     }, {
         key: 'parseEmotes',
         value: function parseEmotes(message, emotes) {
-
+            var me = this;
             var start = 0;
             var map = {};
             var emoteList = [];
@@ -12185,7 +12190,7 @@ var Twitch = function () {
                     var indexes = emotes[id][0].split("-");
                     var emote = message.substring(+indexes[0], +indexes[1] + 1);
                     if (!map[emote]) {
-                        emoteList.push(emote);
+                        emoteList.push(me.escapeRegExp(emote));
                         map[emote] = id;
                     }
                 }

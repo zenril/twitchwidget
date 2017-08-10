@@ -1009,13 +1009,12 @@ body {
     display: none !important; } }
 
 .widget {
-  padding: 20px;
   font-weight: 500;
   position: fixed;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  top: 0px;
+  left: 20px;
+  right: 20px;
+  bottom: 10px;
+  top: 10px;
   background: rgba(255, 255, 255, 0.2); }
   .widget .chat {
     overflow: hidden;
@@ -1035,4 +1034,5 @@ body {
       width: auto; }
     .widget .user-message span, .widget .user-message div {
       font-weight: 600;
+      word-break: break-word;
       font-family: 'Roboto', sans-serif; }
