@@ -8,9 +8,9 @@ import {
 import Chat from './components/Chat.js';
 import Home from './components/Home.js';
 
-const App = React.createClass
-({ 
-    render: function ()
+class App extends React.Component
+{ 
+    render ()
     {
         return ( 
             <div id='widget-chat' className="widget chat">
@@ -25,6 +25,6 @@ const App = React.createClass
             </div>
         );
     }
-});
+};
 
 ReactDom.render(<App/>, document.getElementById("app"));

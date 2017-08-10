@@ -12,7 +12,7 @@ export default class Twitch
             options: {
                 debug: !true
             },
-            channels: ["thijshs"]
+            channels: this.props.match.params.name
         };
 
         this.token = {
@@ -83,6 +83,7 @@ export default class Twitch
         var client = new irc.client(me.options);
 
         client.addListener('message', function (channel, user, message, self) {
+    
             message = me.parseEmotes(message, user.emotes);
             callback(channel,user,message);
         });
