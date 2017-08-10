@@ -1027,7 +1027,10 @@ body {
     font-size: 20px;
     margin-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid white; }
+    border-bottom: 1px solid white;
+    padding: 10px; }
+    .widget .user-message:nth-child(even) {
+      background: #f3e7e3; }
     .widget .user-message img {
       height: 20px;
       vertical-align: top;
@@ -1035,4 +1038,5 @@ body {
     .widget .user-message span, .widget .user-message div {
       font-weight: 600;
       word-break: break-word;
-      font-family: 'Roboto', sans-serif; }
+      font-family: 'Roboto', sans-serif;
+      line-height: 25px; }
