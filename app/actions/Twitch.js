@@ -12,7 +12,7 @@ export default class Twitch
             options: {
                 debug: !true
             },
-            channels: this.props.match.params.name
+            channels: this.props.location.query
         };
 
         this.token = {
