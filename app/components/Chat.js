@@ -38,6 +38,11 @@ export default class Chat extends React.Component
         var self = this;
         self.twitch.chat(function(channel, user, message) {
             const messages = self.state.messages;
+            
+            if(messages.length > 50){
+                messages.shift();
+            }
+            
             messages.push( { message : message,  user:user, key:user.id } );
             self.setState({ messages });
             var element = document.getElementById("chat");

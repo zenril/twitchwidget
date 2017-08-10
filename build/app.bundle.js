@@ -28873,6 +28873,11 @@ var Chat = function (_React$Component) {
             var self = this;
             self.twitch.chat(function (channel, user, message) {
                 var messages = self.state.messages;
+
+                if (messages.length > 50) {
+                    messages.shift();
+                }
+
                 messages.push({ message: message, user: user, key: user.id });
                 self.setState({ messages: messages });
                 var element = document.getElementById("chat");
