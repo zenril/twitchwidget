@@ -6,13 +6,13 @@ import ReactDom from 'react-dom';
 
 export default class Twitch
 {
-    constructor(props) 
+    constructor(channel) 
     {
         this.options = {
             options: {
                 debug: !true
             },
-            channels: this.props.location.query
+            channels: [channel]
         };
 
         this.token = {

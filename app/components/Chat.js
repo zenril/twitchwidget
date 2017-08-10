@@ -29,7 +29,7 @@ export default class Chat extends React.Component
             channel : props.match.params["name"],
             messages : []
         };
-        this.twitch = new Twitch();
+        this.twitch = new Twitch(props.match.params["name"]);
 
     }
 

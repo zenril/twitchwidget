@@ -12136,14 +12136,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Twitch = function () {
-    function Twitch(props) {
+    function Twitch(channel) {
         _classCallCheck(this, Twitch);
 
         this.options = {
             options: {
                 debug: !true
             },
-            channels: this.props.location.query
+            channels: [channel]
         };
 
         this.token = {
@@ -28857,7 +28857,7 @@ var Chat = function (_React$Component) {
             channel: props.match.params["name"],
             messages: []
         };
-        _this.twitch = new _Twitch2.default();
+        _this.twitch = new _Twitch2.default(props.match.params["name"]);
 
         return _this;
     }
